@@ -1,0 +1,30 @@
+void Selection_Sort(int a[], int n){
+	int min;
+	for(int i=0; i<n-1; i++){
+		min = i;
+		for(int j=i+1; j<n; j++){
+			if (a[j] < a[min]){
+				min = j;
+			}
+		}
+		int x = a[min];
+        a[min] = a[i];
+        a[i] =x;
+	}
+}
+void xuat(int a[], int n)
+{
+    for (int i=0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+}
+
+int main()
+{
+    int a[] = {43, 53, 4, 14, 56, 1};
+    int n = sizeof(a)/sizeof(a[0]);
+    Selection_Sort(a, n);
+    printf("Mang sau khi duoc sap xep: \n");
+    xuat(a, n);
+    return 0;
+}
